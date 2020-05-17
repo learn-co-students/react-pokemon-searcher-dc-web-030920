@@ -31,22 +31,19 @@ class PokemonPage extends React.Component {
         back: newPokemon.backUrl
       }
     }
+    const pokeArray = this.state.pokemon
     fetch('http://localhost:3000/pokemon', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(obj)
+    }).then(response => response.json())
+    .then(newPokemon => {
+      const updatedArray = pokeArray.concat(newPokemon)
+      this.setState({
+        pokemon: updatedArray
+      })
     })
 }
-
-
-  componentDidUpdate(){
-    fetch('http://localhost:3000/pokemon')
-    .then(resp => resp.json())
-    .then(data => 
-      this.setState({
-        pokemon: (data.filter(pokemon => pokemon.name.includes(this.state.searchTerm)))}
-        )
-    )}
 
 
   componentDidMount(){
@@ -59,6 +56,7 @@ class PokemonPage extends React.Component {
   }
 
   render() {
+    const pokemonRender = this.state.pokemon.filter(pokemon => pokemon.name.includes(this.state.searchTerm))
     return (
       <Container>
         <h1>Pokemon Searcher</h1>
@@ -67,7 +65,7 @@ class PokemonPage extends React.Component {
         <br />
         <Search onSearch={this.onSearch} />
         <br />
-        <PokemonCollection pokemon={this.state.pokemon} />
+        <PokemonCollection pokemon={pokemonRender} />
       </Container>
     )
   }
