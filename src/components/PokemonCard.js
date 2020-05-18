@@ -11,13 +11,6 @@ class PokemonCard extends React.Component {
 }
 
 
-
-// componentDidMount(){
-//   this.setState({
-//     image : this.props.pokemon.sprites.front
-//   })
-// }
-
 toggleImage =()=>{
 
     if(this.state.image){
