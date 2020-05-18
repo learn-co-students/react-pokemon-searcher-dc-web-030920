@@ -75,7 +75,10 @@ class PokemonForm extends React.Component {
       })
    })
       .then(resp => resp.json())
-      .then(newPokemon => this.props.pokemonArray.concat(newPokemon))
+      .then(newPokemon => {
+        const updatedPokemons = [...this.props.pokemonArray, newPokemon]
+        this.setState({pokemons: updatedPokemons})
+      })
    }
 
   render() {

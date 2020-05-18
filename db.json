@@ -7369,18 +7369,127 @@
       "id": 207
     },
     {
+      "height": 0,
+      "weight": 0,
       "name": "",
+      "abilities": [],
+      "moves": [],
       "stats": [
+        {
+          "value": 154,
+          "name": "special-attack"
+        },
+        {
+          "value": 130,
+          "name": "speed"
+        },
+        {
+          "value": 110,
+          "name": "attack"
+        },
         {
           "value": "",
           "name": "hp"
+        },
+        {
+          "value": 90,
+          "name": "special-defense"
+        },
+        {
+          "value": 90,
+          "name": "defense"
         }
       ],
-      "sprites": {
-        "front": "",
-        "back": ""
-      },
+      "types": [],
+      "sprites": [
+        {
+          "frontUrl": "",
+          "backUrl": ""
+        }
+      ],
       "id": 208
+    },
+    {
+      "height": 0,
+      "weight": 0,
+      "name": "snorelax",
+      "abilities": [],
+      "moves": [],
+      "stats": [
+        {
+          "value": 154,
+          "name": "special-attack"
+        },
+        {
+          "value": 130,
+          "name": "speed"
+        },
+        {
+          "value": 110,
+          "name": "attack"
+        },
+        {
+          "value": "Brandon Pricefg",
+          "name": "hp"
+        },
+        {
+          "value": 90,
+          "name": "special-defense"
+        },
+        {
+          "value": 90,
+          "name": "defense"
+        }
+      ],
+      "types": [],
+      "sprites": [
+        {
+          "frontUrl": "fgf",
+          "backUrl": "fffd"
+        }
+      ],
+      "id": 209
+    },
+    {
+      "height": 0,
+      "weight": 0,
+      "name": "",
+      "abilities": [],
+      "moves": [],
+      "stats": [
+        {
+          "value": 154,
+          "name": "special-attack"
+        },
+        {
+          "value": 130,
+          "name": "speed"
+        },
+        {
+          "value": 110,
+          "name": "attack"
+        },
+        {
+          "value": "",
+          "name": "hp"
+        },
+        {
+          "value": 90,
+          "name": "special-defense"
+        },
+        {
+          "value": 90,
+          "name": "defense"
+        }
+      ],
+      "types": [],
+      "sprites": [
+        {
+          "frontUrl": "",
+          "backUrl": ""
+        }
+      ],
+      "id": 210
     }
   ]
 }
