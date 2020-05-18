@@ -13,11 +13,64 @@ class PokemonForm extends React.Component {
     }
   }
 
+  handleForm =(e)=>{
+    e.preventDefault()
+
+    this.setState({
+      name: e.target['name'].value,
+      hp: e.target['hp'].value,
+      frontUrl: e.target['frontUrl'].value ,
+      backUrl : e.target['backUrl'].value 
+    })
+
+    fetch('http://localhost:3000/pokemon', {
+      method : 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        height: 0,
+        weight: 0,
+        name: this.state.name,
+        abilities:[],
+        moves: [],
+        stats: [
+          {
+            value: 154,
+            name: "special-attack"
+          },
+          {
+            value: 130,
+            name: "speed"
+          },
+          {
+            value: 110,
+            "name": "attack"
+          },
+          {
+            value: this.state.hp,
+            "name": "hp"
+          },
+          {
+            value: 90,
+            "name": "special-defense"
+          },
+          {
+            value: 90,
+            "name": "defense"
+          }],
+        types: [],
+        sprites: [{frontUrl: this.state.frontUrl, backUrl : this.state.backUrl }],
+
+      })
+   })
+      .then(resp => resp.json())
+      .then(newPokemon => this.props.pokemonArray.concat(newPokemon))
+   }
+
   render() {
     return (
       <div>
         <h3>Add a Pokemon!</h3>
-        <Form onSubmit={() => {console.log("submitting form...")}}>
+        <Form onSubmit={this.handleForm}>
           <Form.Group widths="equal">
             <Form.Input fluid label="Name" placeholder="Name" name="name" />
             <Form.Input fluid label="hp" placeholder="hp" name="hp" />
