@@ -16,6 +16,18 @@ class PokemonForm extends React.Component {
   handleForm =(e)=>{
     e.preventDefault()
 
+    // const pokemonObj = {
+    //   name: this.state.name,
+    //   stats: [{
+    //     value: this.state.hp,
+    //     name: 'hp'
+    //   }],
+    //   sprites: {
+    //     front: this.state.frontUrl,
+    //     back: this.state.backUrl
+    //   }
+    // }
+
     this.setState({
       name: e.target['name'].value,
       hp: e.target['hp'].value,
