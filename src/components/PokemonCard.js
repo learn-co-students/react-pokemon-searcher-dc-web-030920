@@ -13,20 +13,13 @@ class PokemonCard extends React.Component {
 
 toggleImage =()=>{
 
-    if(this.state.image){
+
     this.setState({
-      image : false
+      image : !this.state.image
     })
-    }else{
-      this.setState({
-        image : true
-    })
-  }
+   
 }
              
-
-
-
 
   render(){
   
